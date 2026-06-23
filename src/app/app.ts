@@ -13,7 +13,7 @@ interface MessageResponse {
 })
 export class App {
   private readonly http = inject(HttpClient);
-  private readonly apiUrl = 'http://localhost:5048/api/message';
+  private readonly apiUrl = 'http://localhost:5000/api/message';
 
   protected readonly title = signal('Angular + ASP.NET Core Starter');
   protected readonly message = signal('Click the button to call the API.');
