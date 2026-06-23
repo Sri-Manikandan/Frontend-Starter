@@ -1,5 +1,6 @@
 import { Component, inject, signal } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { environment } from '../environments/environment';
 
 interface MessageResponse {
   message: string;
@@ -13,7 +14,7 @@ interface MessageResponse {
 })
 export class App {
   private readonly http = inject(HttpClient);
-  private readonly apiUrl = 'http://localhost:5000/api/message';
+  private readonly apiUrl = `${environment.apiBaseUrl}/message`;
 
   protected readonly title = signal('Angular + ASP.NET Core Starter');
   protected readonly message = signal('Click the button to call the API.');
