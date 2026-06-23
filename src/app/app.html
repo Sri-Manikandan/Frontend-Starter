@@ -1,0 +1,16 @@
+<main class="page">
+  <section class="card">
+    <h1>{{ title() }}</h1>
+    <p class="subtitle">A minimal Angular frontend talking to an ASP.NET Core API.</p>
+
+    <button (click)="getMessage()" [disabled]="loading()">
+      {{ loading() ? 'Loading…' : 'Call API' }}
+    </button>
+
+    @if (error()) {
+      <p class="error">{{ error() }}</p>
+    } @else {
+      <p class="message">{{ message() }}</p>
+    }
+  </section>
+</main>
